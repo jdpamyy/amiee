@@ -1,11 +1,18 @@
 import type { Metadata, Viewport } from "next";
-import { Noto_Sans_Thai, Prompt } from "next/font/google";
+import { Cormorant, Noto_Sans_Thai, Noto_Serif_Thai } from "next/font/google";
 import "./globals.css";
 
-const heading = Prompt({
+const heading = Noto_Serif_Thai({
   variable: "--font-heading",
   subsets: ["thai", "latin"],
   weight: ["400", "500", "600"],
+});
+
+const paris = Cormorant({
+  variable: "--font-cormorant",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
 });
 
 const body = Noto_Sans_Thai({
@@ -14,7 +21,7 @@ const body = Noto_Sans_Thai({
   weight: ["400", "500", "600"],
 });
 
-const title = "amiee — เสื้อผ้าสายแฟ ใส่ได้ทุกวัน";
+const title = "amiee — เสื้อผ้าสายแฟ ฟีล Paris ใส่ได้ทุกวัน";
 const description =
   "เสื้อ เดรส กางเกง กระโปรง สไตล์น้อยแต่มาก ใส่เป็น everyday look ได้ ราคาจับต้องได้ ตัดเย็บเนี้ยบ ทักไลน์ได้เลย";
 
@@ -36,14 +43,14 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#fbe4e6",
+  themeColor: "#fbf7f2",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="th"
-      className={`${heading.variable} ${body.variable} h-full antialiased`}
+      className={`${heading.variable} ${paris.variable} ${body.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">{children}</body>
     </html>
