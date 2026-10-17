@@ -24,13 +24,6 @@ const highlights = [
   },
 ];
 
-const products = [
-  { fr: "Les hauts", name: "เสื้อ", text: "เชิ้ต เสื้อยืด เสื้อครอป ใส่ง่าย แมตช์ได้กับทุกตัว", icon: TopIcon },
-  { fr: "Les robes", name: "เดรส", text: "ตัวเดียวจบ ใส่ไปทำงาน ไปคาเฟ่ หรือเดตก็ได้", icon: DressIcon },
-  { fr: "Les pantalons", name: "กางเกง", text: "ทรงสวย เก็บสัดส่วน ใส่สบายตลอดวัน", icon: PantsIcon },
-  { fr: "Les jupes", name: "กระโปรง", text: "สั้น ยาว พลีท ทรงเอ เติมความน่ารักให้ทุกลุค", icon: SkirtIcon },
-];
-
 // คำถามที่พบบ่อย — คำตอบเป็นตัวอย่าง แก้ให้ตรงกับนโยบายร้านจริง
 const faqs = [
   {
@@ -88,10 +81,10 @@ export default function Home() {
               <div className="mt-8 flex flex-wrap items-center gap-3">
                 <LineButton />
                 <a
-                  href="#products"
+                  href="#contact"
                   className="border-b border-foreground px-1 py-2 text-sm tracking-wide transition hover:border-rose hover:text-rose"
                 >
-                  ดูคอลเลกชัน →
+                  ขอดูแบบล่าสุด →
                 </a>
               </div>
             </div>
@@ -113,34 +106,6 @@ export default function Home() {
                 <p className="mt-2 text-muted">{text}</p>
               </div>
             ))}
-          </div>
-        </section>
-
-        {/* สินค้า */}
-        <section id="products" className="scroll-mt-20">
-          <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6">
-            <SectionTitle fr="La collection" title="ครบทุกชิ้น สำหรับลุคประจำวัน" />
-            <div className="mt-10 grid grid-cols-2 gap-x-4 gap-y-8 md:grid-cols-4">
-              {products.map(({ fr, name, text, icon: Icon }) => (
-                <div key={name} className="text-center">
-                  <div className="grid aspect-[3/4] place-items-center rounded-t-full border border-hairline bg-blush p-2 text-foreground">
-                    <div className="grid size-full place-items-center rounded-t-full border border-surface/80">
-                      <Icon />
-                    </div>
-                  </div>
-                  <p className="mt-4 font-paris text-lg italic text-rose">{fr}</p>
-                  <h3 className="font-display text-xl font-medium">{name}</h3>
-                  <p className="mt-1 text-sm text-muted">{text}</p>
-                </div>
-              ))}
-            </div>
-            <div className="mt-12 flex flex-col items-center gap-4 border-t border-hairline pt-10 text-center">
-              <p className="text-lead">
-                อยากดูแบบล่าสุดและราคา?{" "}
-                <span className="text-muted">ทักไลน์ แอดมินส่งรูปให้ดูทุกแบบ</span>
-              </p>
-              <LineButton />
-            </div>
           </div>
         </section>
 
@@ -260,56 +225,6 @@ function HeroArt() {
 }
 
 /* ===== ไอคอน ===== */
-function svgProps(size = 24) {
-  return {
-    width: size,
-    height: size,
-    viewBox: "0 0 24 24",
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: 1.2,
-    strokeLinecap: "round" as const,
-    strokeLinejoin: "round" as const,
-    "aria-hidden": true,
-  };
-}
-
-function TopIcon() {
-  return (
-    <svg {...svgProps(56)}>
-      <path d="M8 3l4 2 4-2 5 4-3 3-2-1v12H8V9l-2 1-3-3z" />
-    </svg>
-  );
-}
-
-function DressIcon() {
-  return (
-    <svg {...svgProps(56)}>
-      <path d="M9 2v4l-1 4h8l-1-4V2" />
-      <path d="M8 10l-4 12h16l-4-12" />
-    </svg>
-  );
-}
-
-function PantsIcon() {
-  return (
-    <svg {...svgProps(56)}>
-      <path d="M6 3h12l2 19h-5l-3-12-3 12H4z" />
-      <path d="M6 6h12" />
-    </svg>
-  );
-}
-
-function SkirtIcon() {
-  return (
-    <svg {...svgProps(56)}>
-      <path d="M7 5h10" />
-      <path d="M7 5L3 20h18L17 5" />
-      <path d="M10 5l-2 15M14 5l2 15M12 5v15" />
-    </svg>
-  );
-}
-
 function EiffelIcon() {
   return (
     <svg viewBox="0 0 40 64" width="34" height="54" className="mx-auto text-rose" fill="none" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
