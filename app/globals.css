@@ -1,0 +1,51 @@
+@import "tailwindcss";
+
+/* ===== สีและตัวอักษรของ amiee — แก้ที่นี่ที่เดียว ใช้ทั้งหน้า ===== */
+:root {
+  --background: #fffaf8; /* พื้นหลังครีมอมชมพู */
+  --surface: #ffffff; /* การ์ด */
+  --blush: #fbe4e6; /* ชมพูอ่อน */
+  --blush-deep: #f6cdd2; /* ชมพูเข้มขึ้นนิด */
+  --rose: #c96a7a; /* ชมพูกุหลาบ ใช้กับปุ่มรอง/ไอคอน */
+  --accent: #b4536a; /* สีปุ่มหลัก */
+  --accent-hover: #9d4459;
+  --foreground: #4a3438; /* ตัวหนังสือหลัก น้ำตาลอมชมพู */
+  --muted: #8a7276; /* ตัวหนังสือรอง */
+  --line-green: #06c755; /* สีปุ่ม LINE */
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-blush: var(--blush);
+  --color-blush-deep: var(--blush-deep);
+  --color-rose: var(--rose);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-line: var(--line-green);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-heading);
+
+  /* ขนาดตัวอักษร (ภาษาไทยต้องมีระยะบรรทัดเผื่อสระบน-ล่าง) */
+  --text-hero: 2.75rem;
+  --text-hero--line-height: 1.25;
+  --text-section: 1.875rem;
+  --text-section--line-height: 1.35;
+  --text-lead: 1.125rem;
+  --text-lead--line-height: 1.8;
+
+  --radius-card: 1.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  line-height: 1.75;
+}
