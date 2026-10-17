@@ -26,6 +26,7 @@ const description =
   "เสื้อ เดรส กางเกง กระโปรง สไตล์น้อยแต่มาก ใส่เป็น everyday look ได้ ราคาจับต้องได้ ตัดเย็บเนี้ยบ ทักไลน์ได้เลย";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://amiee.vercel.app"),
   title,
   description,
   openGraph: {
@@ -34,9 +35,11 @@ export const metadata: Metadata = {
     siteName: "amiee",
     locale: "th_TH",
     type: "website",
+    images: [{ url: "/amiee-look.jpg", width: 1600, height: 2000, alt: "amiee" }],
   },
   twitter: {
     card: "summary_large_image",
+    images: ["/amiee-look.jpg"],
     title,
     description,
   },

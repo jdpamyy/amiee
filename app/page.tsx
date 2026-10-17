@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Fragment } from "react";
 
 // ===== ข้อมูลร้าน — แก้ตรงนี้ได้เลย =====
@@ -234,24 +235,24 @@ function SectionTitle({ fr, title }: { fr: string; title: string }) {
 
 function HeroArt() {
   return (
-    <div aria-hidden className="relative mx-auto w-full max-w-[18rem] md:max-w-sm">
-      {/* หน้าต่างโค้งแบบอาคารปารีส */}
-      <div className="aspect-[3/4] rounded-t-full border border-hairline p-3">
-        <div className="relative grid size-full place-items-center overflow-hidden rounded-t-full bg-blush">
-          <div className="absolute inset-x-0 bottom-0 h-1/4 bg-blush-deep/60" />
-          <svg viewBox="0 0 120 160" className="relative h-3/4 text-foreground" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M60 10v10" />
-            <path d="M48 12a12 8 0 0 1 24 0" />
-            <path d="M44 26c6 6 26 6 32 0l10 14-10 6v14l26 86H18l26-86V46l-10-6z" fill="var(--surface)" />
-            <path d="M44 60c10 6 22 6 32 0" />
-            <path d="M52 100l-4 46M68 100l4 46M60 96v50" stroke="var(--blush-deep)" />
-          </svg>
+    <div className="relative mx-auto w-full max-w-[20rem] md:max-w-sm">
+      {/* รูปในกรอบหน้าต่างโค้งแบบอาคารปารีส */}
+      <div className="aspect-[4/5] rounded-t-full border border-hairline p-3">
+        <div className="relative size-full overflow-hidden rounded-t-full bg-blush">
+          <Image
+            src="/amiee-look.jpg"
+            alt="นางแบบสองคนในชุดเซ็ตเสื้อครอปและกระโปรงพองประดับเลื่อม สีขาวและสีดำ จาก amiee"
+            fill
+            priority
+            sizes="(min-width: 768px) 384px, 320px"
+            className="object-cover object-top"
+          />
         </div>
       </div>
-      <span className="absolute -left-3 top-1/3 bg-surface px-3 py-1 font-paris text-lg italic shadow-sm">
+      <span aria-hidden className="absolute -left-3 top-1/3 bg-surface px-3 py-1 font-paris text-lg italic shadow-sm">
         très chic
       </span>
-      <span className="absolute -right-2 bottom-12 bg-accent px-3 py-1 text-sm text-white">
+      <span aria-hidden className="absolute -right-2 bottom-12 bg-accent px-3 py-1 text-sm text-white">
         everyday look
       </span>
     </div>
